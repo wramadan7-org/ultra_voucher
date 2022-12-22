@@ -1,0 +1,1 @@
+SELECT f.id, f.name AS name, s.name AS parent_name FROM ultra_voucher.`user` f LEFT JOIN ultra_voucher.`user` s  ON f.parent_id = s.id;
