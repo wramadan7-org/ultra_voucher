@@ -26,33 +26,34 @@ const resultArray = [
 defaultArray.splice()
 
 const logic = () => {
-  let array = []
+  let array = [];
 
   for (let i = 0; i < defaultArray.length; i++) {
+    let iArray = [];
     for (let s = 0; s < defaultArray[i].length; s++) {
-      // array.push(defaultArray[i][s])
-      console.log([...defaultArray[i][s]])
+      iArray.push(defaultArray[i][s]);
     }
+    array.push(iArray);
   }
 
-  // console.log(array)
+  console.log(array);
 
-  // let name = [...defaultArray]
-  // console.log(name)
+  // let name = "rama";
+  // // console.log(name)
 
-  // let a = []
+  // // let a = []
 
   // for (let i = 0; i < name.length; i++) {
   //   for (let d = 0; d < name.length; d++) {
-  //     if (name[i+1] < name[i]) {
-  //       let temp = name[d]
-  //       name[d] = name[d+1]
-  //       name[d+1] = temp
-  //       console.log(name)
+  //     if (name[i + 1] < name[i]) {
+  //       let temp = name[d];
+  //       name[d] = name[d + 1];
+  //       name[d + 1] = temp;
   //     }
   //   }
   // }
-  
+  // console.log(name);
+
   // console.log(a)
 }
 
