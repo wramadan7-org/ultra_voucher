@@ -1,60 +1,47 @@
-const defaultArray = [
-  'cook',
-  'save',
-  'taste',
-  'vase',
-  'aves',
-  'state',
-  'map'
-]
+let defaultArray = ["cook", "save", "taste", "vase", "aves", "state", "map"];
 
 const resultArray = [
-  ['cook'],
-  [
-    'save',
+  ["cook"],
+  ["save", "vase", "aves"],
+  ["taste", "state"],
+  ["map"],
+];
 
-    'vase',
-    'aves'
-  ],
-  [
-    'taste',
-    'state'
-  ],
-  ['map']
-]
-
-defaultArray.splice()
-
-const logic = () => {
+const logic = (arrayParam) => {
   let array = [];
 
-  for (let i = 0; i < defaultArray.length; i++) {
+  for (let i = 0; i < arrayParam.length; i++) {
     let iArray = [];
-    for (let s = 0; s < defaultArray[i].length; s++) {
-      iArray.push(defaultArray[i][s]);
+    for (let s = 0; s < arrayParam[i].length; s++) {
+      // console.log("array I: ", i, arrayParam[i]);
+      // console.log("array S: ", s, arrayParam[s]);
+      if (arrayParam[i][s] > arrayParam[i][s + 1]) {
+        let temp = arrayParam[i][s];
+        arrayParam[i][s] = arrayParam[i][s + 1];
+        arrayParam[i][s + 1] = temp;
+      }
+      iArray.push(arrayParam[i][s]);
     }
     array.push(iArray);
   }
 
-  console.log(array);
+  return array;
+};
 
-  // let name = "rama";
-  // // console.log(name)
+// const bubble = (items) => {
+//   var length = items.length;
+//   for (var i = 0; i < length; i++) {
+//     for (var j = 0; j < length - i - 1; j++) {
+//       if (items[i][j] > items[i][j + 1]) {
+//         var tmp = items[i][j];
+//         items[i][j] = items[i][j + 1];
+//         items[i][j + 1] = tmp;
+//       }
+//     }
+//   }
+//   return items;
+// };
 
-  // // let a = []
+console.log(logic(defaultArray));
 
-  // for (let i = 0; i < name.length; i++) {
-  //   for (let d = 0; d < name.length; d++) {
-  //     if (name[i + 1] < name[i]) {
-  //       let temp = name[d];
-  //       name[d] = name[d + 1];
-  //       name[d + 1] = temp;
-  //     }
-  //   }
-  // }
-  // console.log(name);
-
-  // console.log(a)
-}
-
-logic()
+// console.log(bubble(defaultArray));
